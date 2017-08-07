@@ -7,8 +7,13 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOnline: !Off.check().offline
+      isOnline: false
     };
+  }
+
+  componentWillMount(){
+    Off.check();
+    console.log('Off.check()', Off.check());
   }
 
   componentDidMount(){
